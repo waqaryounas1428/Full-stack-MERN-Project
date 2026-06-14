@@ -316,8 +316,6 @@ Statistics Cards:
 ---
 
 ## 🏗️ System Architecture
-
-```mermaid
 graph TB
     A[React Frontend<br/>Vite + React 19] -->|HTTP/HTTPS| B[Express Backend<br/>Node.js + Express]
     A -->|WebSocket| C[Socket.IO Server<br/>Real-time Updates]
