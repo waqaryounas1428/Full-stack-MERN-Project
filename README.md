@@ -1552,10 +1552,6 @@ If you find this project helpful, please consider:
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/hirehub-pk&type=Date)](https://star-history.com/#yourusername/hirehub-pk&Date)
-
----
-
 ### Made with ❤️ in Pakistan
 
 **HireHub.Pk** - Connecting Talent with Opportunity
