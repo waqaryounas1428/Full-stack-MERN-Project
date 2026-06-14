@@ -1,0 +1,421 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+/* Transparent navbar for home page only */
+.navbar.navbar-transparent {
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: fixed;
+}
+
+/* LOGO */
+.logo {
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    animation: briefcaseBounce 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes briefcaseBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    /* background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: #e5e7eb;
+    background-clip: text;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.logo:hover .logo-icon {
+    animation: briefcaseSpin 0.6s ease-in-out;
+}
+
+@keyframes briefcaseSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.logo:hover h1 {
+    transform: scale(1.05);
+}
+
+/* BUTTON CONTAINER */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.user-name {
+    color: #e5e7eb;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+/* COMMON BUTTON STYLE */
+.auth-buttons button {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: var(--transition-base);
+}
+
+/* HOME BUTTON */
+.home-btn {
+    background: transparent;
+    color: #e5e7eb;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #10b981;
+    transform: translateY(-2px);
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    background: transparent;
+    color: #e5e7eb;
+    border: 1.5px solid var(--border-dark);
+}
+
+.login-btn:hover {
+    background: var(--border-dark);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* SIGNUP BUTTON */
+.signup-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--text-white);
+    box-shadow: var(--shadow-md);
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* MY APPLICATIONS BUTTON */
+.my-apps-btn {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    color: var(--text-white);
+}
+
+.my-apps-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ADMIN BUTTON */
+.admin-btn {
+    background: linear-gradient(135deg, var(--warning), #d97706);
+    color: var(--text-white);
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    background: linear-gradient(135deg, var(--error), #dc2626);
+    color: var(--text-white);
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .auth-buttons {
+        gap: 0.5rem;
+    }
+
+    .auth-buttons button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .user-name {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .auth-buttons button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 1rem 3rem;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .auth-buttons button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== USER DROPDOWN MENU ===== */
+.user-menu-container {
+    position: relative;
+}
+
+.user-icon-btn {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+    padding: 8px 16px !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+
+.user-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: var(--primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.user-avatar {
+    font-size: 18px;
+}
+
+.user-name-short {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffff !important;
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb;
+    min-width: 250px;
+    z-index: 1000;
+    overflow: hidden;
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+@keyframes dropdownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.user-avatar-large {
+    font-size: 32px;
+    background: var(--primary);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name-full {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #6b7280;
+    background: #e5e7eb;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 0;
+}
+
+.dropdown-options {
+    padding: 8px 0;
+}
+
+.dropdown-item {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.dropdown-item.admin-item {
+    color: #d97706;
+}
+
+.dropdown-item.admin-item:hover {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.dropdown-item.logout-item {
+    color: #dc2626;
+}
+
+.dropdown-item.logout-item:hover {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+/* Mobile responsive for dropdown */
+@media (max-width: 768px) {
+    .user-name-short {
+        display: none;
+    }
+    
+    .user-dropdown {
+        min-width: 200px;
+        right: -10px;
+    }
+    
+    .user-info {
+        padding: 12px;
+    }
+    
+    .user-avatar-large {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    .dropdown-item {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}

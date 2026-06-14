@@ -1,0 +1,132 @@
+.career-advice-page {
+    min-height: 100vh;
+    padding: 80px 30px 40px;
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #ffffff 100%);
+}
+
+.advice-header {
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateX(-5px);
+}
+
+.advice-header h1 {
+    font-size: 48px;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.advice-header p {
+    font-size: 18px;
+    color: #6b7280;
+}
+
+.advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.advice-card {
+    background: white;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #e5e7eb;
+}
+
+.advice-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+    border-color: #2563eb;
+}
+
+.advice-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.advice-card h2 {
+    font-size: 22px;
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.advice-description {
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.advice-tips h3 {
+    font-size: 16px;
+    color: #2563eb;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.advice-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advice-tips li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.advice-tips li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .career-advice-page {
+        padding: 100px 20px 40px;
+    }
+
+    .advice-header h1 {
+        font-size: 32px;
+    }
+
+    .advice-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .back-btn {
+        position: static;
+        margin-bottom: 20px;
+    }
+}

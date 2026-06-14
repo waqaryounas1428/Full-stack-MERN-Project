@@ -1,0 +1,180 @@
+ /* Container ko center karne ke liye body ya parent par box-sizing zaroori hai */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Image ke matching metallic aur cyan shades */
+  background: linear-gradient(
+    135deg, 
+    #4a6d8c 0%,    /* Top-left soft metallic blue */
+    #23394a 35%,   /* Image ka main deep dark slate blue */
+    #111d28 70%,   /* Shadow elements */
+    #53b1e6 100%   /* Bottom-right neon screen glow effect */
+  );
+  background-size: cover;
+  z-index: -1;
+}
+
+/* About section wrapper - page background */
+.about-section-wrapper {
+    width: 100%;
+    padding: var(--spacing-2xl) 0;
+    /* background: linear-gradient(
+        135deg,
+    #87afe5 30%,
+    #eff6ff 80%,
+    #ffffff 150%
+    ); */
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+    max-width: 1000px;
+    width: 90%; 
+    margin: var(--spacing-2xl) auto;
+    /* White background ko hata kar humne translucent white lagaya */
+    background: rgba(255, 255, 255, 0.06);
+    /* Peeche wale background ko blur karne ke liye */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Ek halki si sheeshe jaisi border */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-xl);
+    /* Text colour ko dark se white/cyan kiya taake dark background par saaf dikhe */
+    color: #ffffff;
+    /* Halka sa glow effect */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Jab card par mouse aaye to image ki neon light se match karta hua glow kare */
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(83, 177, 230, 0.5); /* Cyan glow from home.jpg */
+}
+
+/* Image side */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Text side */
+.about-content {
+    flex: 1;
+}
+
+.about-content h1 {
+    font-size: clamp(24px, 5vw, 35px);
+    margin-bottom: var(--spacing-lg);
+    color: #ffffff;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* View Jobs Button */
+.view-jobs-btn {
+    margin-top: var(--spacing-lg);
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.view-jobs-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Media Queries --- */
+
+/* Mobile Devices (640px and below) */
+@media (max-width: 640px) {
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-lg);
+        width: 95%;
+        gap: var(--spacing-lg);
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+    .about-content h1 {
+        font-size: 24px;
+    }
+    
+    .view-jobs-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* Tablets (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .about-card {
+        gap: var(--spacing-lg);
+        padding: var(--spacing-xl);
+    }
+
+    .about-content h1 {
+        font-size: 30px;
+    }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .about-card {
+        gap: var(--spacing-2xl);
+        padding: var(--spacing-2xl);
+    }
+
+    .about-content h1 {
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,228 @@
+.apply-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f4f7ff, #eef2f7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.apply-card {
+    background: #ffffff;
+    padding: var(--spacing-2xl) 35px;
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 580px;
+    box-shadow: var(--shadow-2xl);
+    animation: popIn 0.4s ease;
+}
+
+/* Job summary banner */
+.job-summary {
+    background: linear-gradient(135deg, var(--bg-darker), var(--bg-dark));
+    color: var(--text-white);
+    padding: 18px 20px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 28px;
+}
+
+.job-summary h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.job-summary h2 span {
+    color: var(--secondary);
+}
+
+.job-summary p {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* Form groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.875rem 1.125rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+        resize: none;
+    background: #f9fafb;
+    color: #1f2937;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: #d1d5db;
+    background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.form-group input[type="file"] {
+    padding: 0.75rem;
+    cursor: pointer;
+    background: #ffffff;
+    border: 2px dashed #d1d5db;
+    font-weight: 500;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.error {
+    font-size: 12px;
+    color: var(--error);
+    margin-top: 4px;
+}
+
+/* Buttons row */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.back-btn {
+    flex: 1;
+    padding: 12px;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.back-btn:hover {
+    background: #e2e8f0;
+}
+
+.submit-btn {
+    flex: 2;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Success box */
+.success-box {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.success-icon {
+    font-size: 60px;
+    margin-bottom: var(--spacing-md);
+}
+
+.success-box h3 {
+    font-size: 22px;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.success-box p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile (640px and below) */
+@media (max-width: 640px) {
+    .apply-page {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .apply-card {
+        padding: var(--spacing-lg);
+        max-width: 100%;
+    }
+
+    .job-summary {
+        padding: var(--spacing-md);
+    }
+
+    .job-summary h2 {
+        font-size: 18px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .back-btn, .submit-btn {
+        flex: none;
+    }
+}
+
+/* Tablets (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .apply-card {
+        padding: var(--spacing-xl);
+        max-width: 550px;
+    }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .apply-card {
+        max-width: 650px;
+        padding: var(--spacing-2xl) var(--spacing-2xl);
+    }
+
+    .job-summary h2 {
+        font-size: 24px;
+    }
+}
